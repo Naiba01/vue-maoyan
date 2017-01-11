@@ -1,56 +1,20 @@
 <template>
   <div id="app">
+    <div class="page"></div>
     <tab-bar></tab-bar>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="less">
+@import 'assets/styles/style';
+
+.page {
+  flex: 1;
 }
-
-@font-face {font-family: "iconfont";
-  src: url('/src/assets/fonts/iconfont.eot?t=1484117290566'); /* IE9*/
-  src: url('/src/assets/fonts/iconfont.eot?t=1484117290566#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('/src/assets/fonts/iconfont.woff?t=1484117290566') format('woff'), /* chrome, firefox */
-  url('/src/assets/fonts/iconfont.ttf?t=1484117290566') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('/src/assets/fonts/iconfont.svg?t=1484117290566#iconfont') format('svg'); /* iOS 4.1- */
-}
-
-.iconfont {
-  font-family:"iconfont" !important;
-  font-size:16px;
-  font-style:normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-film-off:before { content: "\e680"; }
-
-.icon-cinema-off:before { content: "\e62a"; }
-
-.icon-cinema-on:before { content: "\e62b"; }
-
-.icon-mine-on:before { content: "\e608"; }
-
-.icon-mine-off:before { content: "\e609"; }
-
-.icon-discover-on:before { content: "\e68d"; }
-
-.icon-discover-off:before { content: "\e68e"; }
-
-.icon-film-on:before { content: "\e600"; }
-
-.icon-faxian1:before { content: "\e67b"; }
 </style>
 
 <script>
-import TabBar from './components/TabBar'
+import TabBar from 'components/TabBar'
 
 export default {
   name: 'app',
