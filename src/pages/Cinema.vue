@@ -2,10 +2,8 @@
   <div>电影院</div>
 </template>
 
-<style>
-  body{
-    background-color:#ff0000;
-  }
+<style lang="less" scoped>
+
 </style>
 
 <script>

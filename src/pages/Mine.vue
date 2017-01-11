@@ -2,10 +2,8 @@
     <div>我的</div>
 </template>
 
-<style>
-  body{
-    background-color:#ff0000;
-  }
+<style lang="less" scoped>
+
 </style>
 
 <script>

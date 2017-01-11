@@ -11,6 +11,7 @@
 .tab-bar {
   display: flex;
   flex: 0;
+  height: 60px;
   background-color:#ffffff;
 }
 .tab {
