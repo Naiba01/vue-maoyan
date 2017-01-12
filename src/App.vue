@@ -1,16 +1,11 @@
 <template>
   <div id="app">
-    <div class="page"></div>
-    <tab-bar></tab-bar>
+    <router-view></router-view>
   </div>
 </template>
 
 <style lang="less">
 @import 'assets/styles/style';
-
-.page {
-  flex: 1;
-}
 </style>
 
 <script>

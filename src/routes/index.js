@@ -33,6 +33,12 @@ const router = new VueRouter({
       component: (resolve) => {
         require(['../pages/Mine'], resolve)
       }
+    },
+    {
+      path: '/city-select',
+      component: (resolve) => {
+        require(['../pages/CitySelect'], resolve)
+      }
     }
   ]
 })
