@@ -1,10 +1,8 @@
 <template>
-  <div>
-    <router-link type="button" class="fake-input-btn" tag="button" to="/discover">
-      <i class="icon iconfont icon-search"></i>
-      {{placeText}}
-    </router-link>
-  </div>
+  <router-link type="button" class="fake-input-btn" tag="button" to="/discover">
+    <i class="icon iconfont icon-search"></i>
+    {{placeText}}
+  </router-link>
 </template>
 
 <style lang="less" scoped>
@@ -12,7 +10,7 @@
 
 .fake-input-btn {
   width: 100%;
-  height: 0.68rem;
+  height: 0.777rem;
   border: 0;
   border-radius: 0.68rem;
   text-align: center;
