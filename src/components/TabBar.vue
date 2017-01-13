@@ -3,7 +3,7 @@
     <router-link
       class="tab"
       :class="currentTab === tab.type ? 'tab-on' : 'tab-off'"
-      :to="{path: tab.type}"
+      :to="{name: tab.type}"
       v-for="tab in tabs"
     >
       <i class="icon iconfont" :class="currentTab === tab.type ? tab.iconOn : tab.iconOff"></i>

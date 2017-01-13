@@ -1,14 +1,15 @@
 <template>
   <div class="switch-nav-bar">
     <div class="container">
-      <div
-        class="nav-btn"
-        :class="currentTab === tab.type ? 'btn-on' : ''"
-        @click="onClick(tab.type)"
-        v-for="tab in tabs"
-      >
-        {{tab.text}}
-      </div>
+      <transition name="slide" v-for="tab in tabs">
+        <router-link
+          class="nav-btn"
+          :class="currentTab === tab.type ? 'btn-on' : ''"
+          :to="{name: tab.type + 'Film'}"
+        >
+          {{tab.text}}
+        </router-link>
+      </transition>
     </div>
   </div>
 </template>
@@ -17,17 +18,20 @@
 @import "../assets/styles/_variables";
 
 .switch-nav-bar {
-  height: 0.777rem;
+  display: inline-block;
   color: white;
 }
 .container {
-  padding: 0.485rem;
-  border-radius: 0.485rem;
+  display: inline-block;
+  padding: 3px;
+  border-radius: 3px;
   background-color: @rose-red;
 }
 .nav-btn {
   display: inline-block;
-  border-radius: 0.485rem;
+  padding: 0.218rem 0.388rem;
+  border-radius: 0.073rem;
+  color: white;
   &.btn-on {
     background-color: white;
     color: @rose-red;
@@ -63,6 +67,9 @@ export default {
     onClick (type) {
       this.currentTab = type
     }
+  },
+  beforeRouteLeave (to, from, next) {
+    console.log(to)
   }
 }
 

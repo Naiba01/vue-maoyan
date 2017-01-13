@@ -10,6 +10,7 @@
           <fake-input placeText="找影视剧、影人、影院"></fake-input>
         </div>
       </div>
+      <router-view></router-view>
     </div>
     <tab-bar currentTab="film"></tab-bar>
   </div>

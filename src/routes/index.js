@@ -12,32 +12,60 @@ const router = new VueRouter({
     },
     {
       path: '/film',
+      name: 'film',
       component: (resolve) => {
-        require(['../pages/Film'], resolve)
-      }
+        require(['pages/Film'], resolve)
+      },
+      children: [
+        {
+          path: 'hot',
+          name: 'hotFilm',
+          component: (resolve) => {
+            require(['components/HotFilm'], resolve)
+          }
+        },
+        {
+          path: 'todo',
+          name: 'todoFilm',
+          component: (resolve) => {
+            require(['components/TodoFilm'], resolve)
+          }
+        },
+        {
+          path: 'find',
+          name: 'findFilm',
+          component: (resolve) => {
+            require(['components/FindFilm'], resolve)
+          }
+        }
+      ]
     },
     {
       path: '/cinema',
+      name: 'cinema',
       component: (resolve) => {
-        require(['../pages/Cinema'], resolve)
+        require(['pages/Cinema'], resolve)
       }
     },
     {
       path: '/discover',
+      name: 'discover',
       component: (resolve) => {
-        require(['../pages/Discover'], resolve)
+        require(['pages/Discover'], resolve)
       }
     },
     {
       path: '/mine',
+      name: 'mine',
       component: (resolve) => {
-        require(['../pages/Mine'], resolve)
+        require(['pages/Mine'], resolve)
       }
     },
     {
       path: '/city-select',
+      name: 'citySelect',
       component: (resolve) => {
-        require(['../pages/CitySelect'], resolve)
+        require(['pages/CitySelect'], resolve)
       }
     }
   ]
