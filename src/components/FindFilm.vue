@@ -42,5 +42,5 @@ export default {
     console.log(to)
     next()
   }
-}
+};
 </script>

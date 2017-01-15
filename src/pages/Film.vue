@@ -33,10 +33,10 @@
 </style>
 
 <script>
-import TabBar from 'components/TabBar'
-import FakeInput from 'components/FakeInput'
-import CitySelectBtn from 'components/CitySelectBtn'
-import SwitchNavBar from 'components/SwitchNavBar'
+import TabBar from 'components/TabBar';
+import FakeInput from 'components/FakeInput';
+import CitySelectBtn from 'components/CitySelectBtn';
+import SwitchNavBar from 'components/SwitchNavBar';
 
 export default {
   name: 'film-page',
@@ -46,5 +46,5 @@ export default {
     CitySelectBtn,
     SwitchNavBar
   }
-}
+};
 </script>

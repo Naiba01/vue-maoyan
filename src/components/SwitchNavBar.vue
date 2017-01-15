@@ -6,6 +6,7 @@
           class="nav-btn"
           :class="currentTab === tab.type ? 'btn-on' : ''"
           :to="{name: tab.type + 'Film'}"
+          @click="onClick(tab.type)"
         >
           {{tab.text}}
         </router-link>
@@ -53,24 +54,24 @@ const tabs = [
     type: 'find',
     text: '找片'
   }
-]
+];
 
 export default {
   name: 'switch-nav-bar',
-  data () {
+  data() {
     return {
       tabs,
       currentTab: 'hot'
     }
   },
   methods: {
-    onClick (type) {
+    onClick(type) {
       this.currentTab = type
     }
   },
-  beforeRouteLeave (to, from, next) {
+  beforeRouteLeave(to, from, next) {
     console.log(to)
   }
-}
+};
 
 </script>

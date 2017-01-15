@@ -31,12 +31,18 @@
 </style>
 
 <script>
+import * as Api from 'api';
 export default {
   name: 'hot-film',
-  data () {
+  data() {
     return {
 
     }
+  },
+  created() {
+    Api.getFilmList('hot', 0, 8).then(data => {
+      console.log('---热映电影---', data.data);
+    });
   }
-}
+};
 </script>
