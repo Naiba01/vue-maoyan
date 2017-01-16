@@ -8,7 +8,7 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
-      redirect: '/film'
+      redirect: '/film/hot'
     },
     {
       path: '/film',

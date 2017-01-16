@@ -17,7 +17,7 @@
 
 .tab-bar {
   flex: 0;
-  padding: 0.073rem 0 0 0;
+  padding: 0.073rem 0 5px 0;
   border-top: 1px solid @grey-de;
   background-color: @grey-f5;
 }
@@ -39,6 +39,8 @@
 </style>
 
 <script>
+import { mapState } from 'vuex';
+
 const tabs = [
   {
     type: 'film',
@@ -68,12 +70,14 @@ const tabs = [
 
 export default {
   name: 'tab-bar',
-  props: ['currentTab'],
-  data () {
+  data() {
     return {
       tabs
     }
-  }
+  },
+  computed: mapState({
+    currentTab: state => state.current.tab
+  })
 }
 
 </script>

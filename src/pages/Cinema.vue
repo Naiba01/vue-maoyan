@@ -1,7 +1,7 @@
 <template>
   <div class="page-has-tabs">
     <div class="content-container">电影院</div>
-    <tab-bar currentTab="cinema"></tab-bar>
+    <tab-bar></tab-bar>
   </div>
 </template>
 
@@ -16,6 +16,9 @@ export default {
   name: 'cinema-page',
   components: {
     TabBar
+  },
+  afterRouteEnter() {
+    this.$store.dispatch.updateCurrentTab('cinema');
   }
 }
 </script>

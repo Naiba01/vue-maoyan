@@ -12,7 +12,7 @@
       </div>
       <router-view></router-view>
     </div>
-    <tab-bar currentTab="film"></tab-bar>
+    <tab-bar></tab-bar>
   </div>
 </template>
 
@@ -45,6 +45,9 @@ export default {
     FakeInput,
     CitySelectBtn,
     SwitchNavBar
+  },
+  afterRouteEnter() {
+    this.$store.dispatch.updateCurrentTab('film');
   }
 };
 </script>
