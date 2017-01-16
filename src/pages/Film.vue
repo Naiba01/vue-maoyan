@@ -10,9 +10,11 @@
           <fake-input placeText="找影视剧、影人、影院"></fake-input>
         </div>
       </div>
-      <router-view></router-view>
+      <hot-film v-if="current.nav === 'hot'"></hot-film>
+      <todo-film v-else-if="current.nav === 'todo'"></todo-film>
+      <find-film v-else></find-film>
     </div>
-    <tab-bar></tab-bar>
+    <tab-bar currentTab="film"></tab-bar>
   </div>
 </template>
 
@@ -33,10 +35,14 @@
 </style>
 
 <script>
+import { mapState } from 'vuex';
 import TabBar from 'components/TabBar';
 import FakeInput from 'components/FakeInput';
 import CitySelectBtn from 'components/CitySelectBtn';
 import SwitchNavBar from 'components/SwitchNavBar';
+import HotFilm from 'components/HotFilm';
+import TodoFilm from 'components/TodoFilm';
+import FindFilm from 'components/FindFilm';
 
 export default {
   name: 'film-page',
@@ -44,10 +50,15 @@ export default {
     TabBar,
     FakeInput,
     CitySelectBtn,
-    SwitchNavBar
+    SwitchNavBar,
+    HotFilm,
+    TodoFilm,
+    FindFilm
   },
-  afterRouteEnter() {
-    this.$store.dispatch.updateCurrentTab('film');
+  computed: {
+    ...mapState([
+      'current'
+    ])
   }
 };
 </script>

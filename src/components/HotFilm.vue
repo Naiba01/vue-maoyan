@@ -1,6 +1,7 @@
 <template>
   <div>
-   热映
+    热映
+    <div v-for="item in films">{{item.id}}</div>
   </div>
 </template>
 
@@ -31,6 +32,8 @@
 </style>
 
 <script>
+import { mapState, mapActions } from 'vuex';
+
 export default {
   name: 'hot-film',
   data() {
@@ -38,8 +41,18 @@ export default {
 
     }
   },
-  created() {
-
+  computed: {
+    ...mapState({
+      films: state => state.film.hotFilms
+    })
+  },
+  methods: {
+    ...mapActions([
+      'addHotFilms'
+    ])
+  },
+  mounted() {
+    this.addHotFilms();
   }
 };
 </script>

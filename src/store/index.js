@@ -1,11 +1,16 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import modules from './modules';
+import current from './modules/current';
+import film from './modules/film';
 
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
-  modules: { ...modules }
+  modules: {
+    current,
+    film
+  },
+  strict: false
 });
 
 export default store;

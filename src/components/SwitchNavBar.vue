@@ -2,14 +2,14 @@
   <div class="switch-nav-bar">
     <div class="container">
       <transition name="slide" v-for="tab in tabs">
-        <router-link
+        <div
           class="nav-btn"
-          :class="currentTab === tab.type ? 'btn-on' : ''"
+          :class="currentNav === tab.type ? 'btn-on' : ''"
           :to="{name: tab.type + 'Film'}"
           @click="onClick(tab.type)"
         >
           {{tab.text}}
-        </router-link>
+        </div>
       </transition>
     </div>
   </div>
@@ -41,6 +41,8 @@
 </style>
 
 <script>
+import { mapState, mapActions } from 'vuex';
+
 const tabs = [
   {
     type: 'hot',
@@ -60,17 +62,21 @@ export default {
   name: 'switch-nav-bar',
   data() {
     return {
-      tabs,
-      currentTab: 'hot'
+      tabs
     }
+  },
+  computed: {
+    ...mapState({
+      currentNav: state => state.current.nav
+    })
   },
   methods: {
+    ...mapActions([
+      'updateCurrentFilmNav'
+    ]),
     onClick(type) {
-      this.currentTab = type
+      this.updateCurrentFilmNav(type);
     }
-  },
-  beforeRouteLeave(to, from, next) {
-    console.log(to)
   }
 };
 

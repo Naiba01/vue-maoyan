@@ -10,7 +10,7 @@
 .city-select-btn {
   position: absolute;
   left: 0.243rem;
-  height: 0.777rem;
+  height: calc(~"100% - 0.388rem");
   border: none;
   font-size: 0.34rem;
   color: white;

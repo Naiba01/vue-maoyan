@@ -39,8 +39,6 @@
 </style>
 
 <script>
-import { mapState } from 'vuex';
-
 const tabs = [
   {
     type: 'film',
@@ -70,14 +68,12 @@ const tabs = [
 
 export default {
   name: 'tab-bar',
+  props: ['currentTab'],
   data() {
     return {
       tabs
     }
-  },
-  computed: mapState({
-    currentTab: state => state.current.tab
-  })
+  }
 }
 
 </script>

@@ -8,37 +8,14 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
-      redirect: '/film/hot'
+      redirect: '/film'
     },
     {
       path: '/film',
       name: 'film',
       component: (resolve) => {
         require(['pages/Film'], resolve)
-      },
-      children: [
-        {
-          path: 'hot',
-          name: 'hotFilm',
-          component: (resolve) => {
-            require(['components/HotFilm'], resolve)
-          }
-        },
-        {
-          path: 'todo',
-          name: 'todoFilm',
-          component: (resolve) => {
-            require(['components/TodoFilm'], resolve)
-          }
-        },
-        {
-          path: 'find',
-          name: 'findFilm',
-          component: (resolve) => {
-            require(['components/FindFilm'], resolve)
-          }
-        }
-      ]
+      }
     },
     {
       path: '/cinema',
