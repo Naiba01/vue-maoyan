@@ -18,7 +18,7 @@
 <style lang="less" scoped>
 @import "../assets/styles/_variables";
 .content-container {
-  max-height: calc(~"100% - 53px");
+  max-height: calc(~"100% - 1.437rem");
   overflow: hidden;
 }
 .film-header {

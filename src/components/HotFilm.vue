@@ -12,7 +12,7 @@
 @import '../assets/styles/_variables';
 
 .hot-film {
-  max-height: calc(~"100% - 51px");
+  max-height: calc(~"100% - 1.378rem");
   overflow-y: scroll;
 }
 .fake-input-bar {
