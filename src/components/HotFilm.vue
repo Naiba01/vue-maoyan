@@ -1,38 +1,30 @@
 <template>
-  <div>
+  <div class="hot-film">
+    <div class="fake-input-bar">
+      <fake-input placeText="找影视剧、影人、影院"></fake-input>
+    </div>
     热映
-    <div v-for="item in films">{{item.id}}</div>
+    <film-card v-for="item in films" :film="item"></film-card>
   </div>
 </template>
 
 <style lang="less" scoped>
-@import "../assets/styles/_variables";
+@import '../assets/styles/_variables';
 
-.tab-bar {
-  flex: 0;
-  padding: 0.073rem 0 0 0;
-  border-top: 1px solid @grey-de;
-  background-color: @grey-f5;
+.hot-film {
+  max-height: calc(~"100% - 51px");
+  overflow-y: scroll;
 }
-.tab {
-  display: inline-block;
-  width: 25%;
-  font-size: 0.291rem;
-  .iconfont {
-    font-size: 0.777rem;
-  }
-  &.tab-off {
-    color: @grey-6;
-  }
-  &.tab-on {
-    color: @default-red;
-  }
+.fake-input-bar {
+  background-color: @default-red;
+  padding: 0.194rem 0.243rem;
 }
-
 </style>
 
 <script>
 import { mapState, mapActions } from 'vuex';
+import FakeInput from 'components/FakeInput';
+import FilmCard from 'components/FilmCard';
 
 export default {
   name: 'hot-film',
@@ -40,6 +32,10 @@ export default {
     return {
 
     }
+  },
+  components: {
+    FilmCard,
+    FakeInput
   },
   computed: {
     ...mapState({
@@ -52,7 +48,10 @@ export default {
     ])
   },
   mounted() {
-    this.addHotFilms();
+    // 没有电影才加载
+    if (!this.films.length) {
+      this.addHotFilms();
+    }
   }
 };
 </script>
