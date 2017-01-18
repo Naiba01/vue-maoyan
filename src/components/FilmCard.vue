@@ -1,6 +1,6 @@
 <template>
   <div class="film-card">
-    <img :src="film.img" width="100px" height="140px" />
+    <img :src="film.img" width="82.5px" height="115.5px" />
     <div class="central">
       <div class="title-bar">
         {{getFilmTitle}}
@@ -10,8 +10,8 @@
         </div>
         <div class="info-box three-d" v-else-if="film['3d'] && !film.imax">3D</div>
       </div>
-      <p v-if="film.preSale"><span>{{film.wish}}</span>人想看</p>
-      <p v-else><span>观众{{film.sc}}</span></p>
+      <p class="praise" v-if="film.preSale"><span class="mark">{{film.wish}}</span>人想看</p>
+      <p class="praise" v-else>观众<span class="mark">{{film.sc}}</span></p>
       <p >{{film.scm}}</p>
       <p>{{film.showInfo}}</p>
     </div>
@@ -39,17 +39,21 @@
   }
 }
 .central {
+  display: flex;
   flex: 1;
+  flex-direction: column;
+  justify-content: space-around;
   margin-left: 12px;
   text-align: left;
   .title-bar {
     font-size: 16px;
     font-weight: 700;
-    line-height: 1.6;
     color: @grey-3;
   }
   .info-box {
     display: inline-block;
+    position: relative;
+    top: -1px;
     margin-left: 5px;
     line-height: 1.4;
     font-size: 12px;
@@ -79,6 +83,16 @@
     border-radius: 3px;
     background-color: @gloomy-blue;
     color: white;
+  }
+  .praise {
+    font-size: 12px;
+    color: @grey-9;
+  }
+  .mark {
+    position: relative;
+    top: 1px;
+    font-size: 16px;
+    color: @default-yellow;
   }
 }
 .operate-btn {
